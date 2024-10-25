@@ -13,17 +13,17 @@ e=20
 def div60(b,n,p):
 	x=b**p
 	if (n/x)<1:
-		return 0
-	elif n/x>1 and (n/x)%b!=0:
-		return int(math.floor(n/x)) 
+		return 0 #this means the number is not divisible into b^p
+	elif n/x>1 and (n/x)%b!=0: 
+		return int(math.floor(n/x)) #this means the number divides in, but there is a remainder that isn't a multiple of b
 	else:
-		return True 	
+		return True #carrys for all others
 
 list=[]
 
-while p>-s-1:
+while p>-5: #only continue for up to 5 sexagesimal places
 	if p==-1:
-		list.append(';')
+		list.append(';') #separates integer and fractional parts
 	x=b**p
 	if div60(b,n,p)==0:
 		if len(list)!=0:
@@ -41,8 +41,8 @@ while p>-s-1:
 i=0
 while i<len(list):
     if list[len(list)-1]==0:
-        list.pop()
-    if list[len(list)-1]==';':
+        list.pop() #remove trailing zeros
+    if list[len(list)-1]==';': #remove the separator if there are no sexagesimal places (i.e they are all 0)
         list.pop()
     i+=1
 
